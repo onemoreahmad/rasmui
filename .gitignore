@@ -1,0 +1,7 @@
+/.phpunit.cache
+/node_modules
+/vendor
+yarn-error.log
+/auth.json
+.DS_Store
+/.DS_Store
