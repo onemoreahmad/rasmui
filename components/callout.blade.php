@@ -8,7 +8,7 @@
 ])
 
  
-<div class="rounded-lg bg-{{ $color }}-50 p-3 [*+&]:mt-4 border border-{{ $color }}-300" {{ $attributes }}>
+<div {{$attributes->class('rounded-lg bg-'.$color.'-50 p-3 [*+&]:mt-4 border border-'.$color.'-300')}}>
     <div class="flex items-center">
         @if ($icon)
         <div class="flex-shrink-0">
