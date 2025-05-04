@@ -1,0 +1,24 @@
+{
+    "name": "onemoreahmad/rasmui",
+    "description": "Rasm ui package",
+    "autoload": {
+        "psr-4": {
+            "Onemoreahmad\\RasmUi\\": "."
+        }
+    },
+    "authors": [
+        {
+            "name": "Ahmad Alahmadi",
+            "email": "contact@ahmad.tech"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Onemoreahmad\\RasmUi\\RasmUiServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
