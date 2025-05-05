@@ -5,9 +5,11 @@
 
 @php
 $classes = match ($size) {
-    'xl' => 'text-2xl [&:has(+[*])]:mb-2 [*+&]:mt-4',
-    'lg' => 'text-base [&:has(+[*])]:mb-2 [*+&]:mt-4',
-    'base' => 'text-sm [&:has(+[*])]:mb-2 [*+&]:mt-4',
+    'xl' => 'text-xl [&:has(+[*])]:mb-2 [*+&]:mt-4',
+    '2xl' => 'text-2xl [&:has(+[*])]:mb-2 [*+&]:mt-4',
+    'lg' => 'text-lg [&:has(+[*])]:mb-2 [*+&]:mt-4',
+    'base' => 'text-base [&:has(+[*])]:mb-2 [*+&]:mt-4',
+    'sm' => 'text-sm [&:has(+[*])]:mb-2 [*+&]:mt-4',
 };
 
 $classes = 'font-medium ' . $classes;

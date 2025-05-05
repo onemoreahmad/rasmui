@@ -5,6 +5,8 @@
     'target' => '',
     'variant' => 'primary',
     'rounded' => null,
+    'current' => null,
+    
 ])
 
 @php $iconTrailing = $attributes->get('icon:trailing'); @endphp
@@ -13,14 +15,14 @@
     $tag = $href ? 'a' : 'button';
     $variantClasses = match($variant) {
         'primary' => 'bg-blue-600 text-white hover:bg-blue-700',
-        'secondary' => 'bg-gray-300 text-gray-800 hover:bg-gray-400 shadow-none',
-        'outline' => 'bg-white text-gray-800 hover:bg-gray-100 border border-gray-200 shadow-none',
-        'ghost' => 'bg-transparent text-gray-800 hover:bg-gray-100 shadow-none',
+        'secondary' => 'bg-black/10 text-black/50 hover:bg-black/20 shadow-none',
+        'outline' => 'bg-white text-black/50 hover:bg-black/5 border border-black/10 shadow-none',
+        'ghost' => 'bg-transparent text-black/50 hover:bg-black/5 shadow-none',
         'green' => 'bg-green-600 text-white hover:bg-green-700',
         'danger' => 'bg-red-600 text-white hover:bg-red-700',
         'warning' => 'bg-yellow-500 text-white hover:bg-yellow-600',
-        'link' => 'bg-transparent text-gray-800 underline hover:bg-transparent shadow-none hover:text-gray-800/50',
-        default => 'bg-gray-300 text-gray-800'
+        'link' => 'bg-transparent text-black/50 underline hover:bg-transparent shadow-none hover:text-black/30',
+        default => 'bg-gray-300 text-black/50'
     };
  
     $class = "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors  focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50  [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0  h-9 px-4 py-2 
@@ -33,8 +35,11 @@
 
 <{{$tag}} 
 @if ($href) href="{{ $href }}" @else role="button" @endif
-class="{{ $class}} {{ $attributes->get('class') }}"
+{{ $attributes->class($class) }} 
+{{-- class="{{ $class }}" --}}
 {{ $attributes->except('icon:trailing') }}
+@if ($current) wire:current="{{ $current }}" @endif
+
 > 
 
 @if ($icon)

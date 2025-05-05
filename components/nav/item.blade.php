@@ -1,6 +1,7 @@
 @props([
  
 ])
-<rasm:button {{ $attributes->class('') }}>
+ <rasm:button {{ $attributes}}>
     {{$slot}}
-</rasm:button>
+ </rasm:button>
+ 

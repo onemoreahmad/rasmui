@@ -12,7 +12,7 @@ $classes = match ($size) {
         'sm' => 'text-xs',
 };
 
-$classes = 'text-gray-500 [*+&]:mt-1 dark:text-white/70 ' . $classes;
+$classes = 'text-gray-500 [*+&]:mt-2 dark:text-white/70 ' . $classes;
 @endphp
 
 <div {{ $attributes->class($classes) }}>
