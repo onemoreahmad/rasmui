@@ -6,6 +6,7 @@
     'block' => false,
     'prefix' => null,
     'suffix' => null,
+    'dir' => null,
 ])
 
 <div class="lg:flex items-center gap-x-2 p-1 bg-gray-100/75 rounded-md @if ($block) flex-col items-start @endif [&:has(+[*])]:mb-2 [*+&]:mt-2">
@@ -13,7 +14,7 @@
         <label for="title" class="inline-block text-sm text-gray-500 p-2 flex-shrink-0 @if ($block) w-full @else w-36 @endif font-semibold">
             {{ $label }} </label>
     @endif
-    <div {{ $attributes->merge(['class' => 'relative w-full ']) }}>
+    <div {{ $attributes->merge(['class' => 'relative w-full ']) }} dir="{{ $dir }}">
         <div class="flex items-center w-full text-gray-500">
 
             @if ($prefix)

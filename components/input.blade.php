@@ -7,7 +7,7 @@
     'disabled' => (bool)false,
     'label' => null,
     'focus' => false,
-    'dir' => '',
+    'dir' => null,
     'icon' => null,
     'description' => '',
     'width' => 'full',
@@ -18,7 +18,7 @@
 
 @php $iconTrailing = $attributes->get('icon:trailing'); @endphp
 
-<rasm:field-wrapper name="{{ $name }}" :info="$description" :label="__($label)" :prefix="$prefix" :suffix="$suffix">
+<rasm:field-wrapper name="{{ $name }}" :info="$description" :label="__($label)" :prefix="$prefix" :suffix="$suffix" :dir="$dir">
 
     <div class="relative w-full">
 
