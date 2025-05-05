@@ -2,10 +2,10 @@
     'trigger' => null,
 ])
  
-<div x-data="{ openDropdown: false }">
+<div x-data="{ openDropdown: false }" class="relative">
     {{ $trigger }}
  
-    <div x-show="openDropdown" @click.outside="openDropdown = false" class="absolute [*+&]:mt-2 z-40" x-transition x-cloak>
+    <div x-show="openDropdown" @click.outside="openDropdown = false" {{ $attributes->class('absolute [*+&]:mt-2 z-40 left-0') }} x-transition x-cloak>
         {{ $slot }}
     </div>
 </div>
@@ -16,7 +16,7 @@
         <button @click="dropdownMenu = ! dropdownMenu" type="button" class="flex items-center gap-2"
             id="user-menu-button" aria-expanded="false" aria-haspopup="true">
             <div class="flex items-center gap-x-2 justify-center text-center">
-                downnn
+                down
                 <span class="-mt-2 opacity-50">⌄</span>
             </div>
         </button>
