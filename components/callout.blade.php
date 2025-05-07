@@ -23,6 +23,9 @@
                 @if ($text)
                     <rasm:text size="sm" class="!text-{{ $color }}-700">{{ $text }}</rasm:text>
                 @endif
+                @if($slot)
+                    {{$slot}}
+                @endif
             </div>
             <div>
                 @if ($action)

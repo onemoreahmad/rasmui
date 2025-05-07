@@ -18,7 +18,7 @@
 
 @php $iconTrailing = $attributes->get('icon:trailing'); @endphp
 
-<rasm:field-wrapper name="{{ $name }}" :info="$description" :label="__($label)" :prefix="$prefix" :suffix="$suffix" :dir="$dir">
+<rasm:field name="{{ $name }}" :info="$description" :label="__($label)" :prefix="$prefix" :suffix="$suffix" :dir="$dir">
 
     <div class="relative w-full">
 
@@ -47,4 +47,4 @@
     
         {{ $slot }}
     </div>
-</rasm:field-wrapper>
+</rasm:field>

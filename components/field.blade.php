@@ -9,9 +9,9 @@
     'dir' => null,
 ])
 
-<div class="lg:flex items-center gap-x-2 p-1 bg-gray-100/75 rounded-md @if ($block) flex-col items-start @endif [&:has(+[*])]:mb-2 [*+&]:mt-2">
+<div wire:key="{{$name}}" class="lg:flex items-center w-full gap-x-2 p-1 bg-gray-100/75 rounded-md @if ($block) flex-col items-start @endif [&:has(+[*])]:mb-2 [*+&]:mt-2">
     @if ($label)
-        <label for="title" class="inline-block text-sm text-gray-500 p-2 flex-shrink-0 @if ($block) w-full @else w-36 @endif font-semibold">
+        <label for="{{$name}}" class="inline-block text-sm text-gray-500 p-2 flex-shrink-0 @if ($block) w-full @else w-36 @endif font-semibold">
             {{ $label }} </label>
     @endif
     <div {{ $attributes->merge(['class' => 'relative w-full ']) }} dir="{{ $dir }}">
@@ -23,7 +23,9 @@
                 </div>
             @endif
             
-            {{ $slot }}
+            <div class="w-full">
+                {{ $slot }}
+            </div>
 
             @if ($suffix)
                 <div class="px-2 text-sm shrink-0">

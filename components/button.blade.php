@@ -2,7 +2,7 @@
     'label' => null,
     'href' => null,
     'icon' => null,
-    'target' => '',
+    'wireTarget' => '',
     'variant' => 'primary',
     'rounded' => null,
     'current' => null,
@@ -15,13 +15,13 @@
     $tag = $href ? 'a' : 'button';
     $variantClasses = match($variant) {
         'primary' => 'bg-blue-600 text-white hover:bg-blue-700',
-        'secondary' => 'bg-black/10 text-black/50 hover:bg-black/20 shadow-none',
-        'outline' => 'bg-white text-black/50 hover:bg-black/5 border border-black/10 shadow-none',
-        'ghost' => 'bg-transparent text-black/50 hover:bg-black/5 shadow-none',
+        'secondary' => 'bg-black/10 text-black/70 hover:bg-black/20 shadow-none',
+        'outline' => 'bg-white text-black/70 hover:bg-black/5 border border-black/10 shadow-none',
+        'ghost' => 'bg-transparent text-black/70 hover:bg-black/10 shadow-none',
         'green' => 'bg-green-600 text-white hover:bg-green-700',
         'danger' => 'bg-red-600 text-white hover:bg-red-700',
         'warning' => 'bg-yellow-500 text-white hover:bg-yellow-600',
-        'link' => 'bg-transparent text-black/50 underline hover:bg-transparent shadow-none hover:text-black/30',
+        'link' => 'bg-transparent text-black/70 underline hover:bg-transparent shadow-none hover:text-black/30',
         default => 'bg-gray-300 text-black/50'
     };
  
@@ -58,8 +58,8 @@
     <rasm:icon name="{{ $iconTrailing }}" class="!w-5 !h-5 rtl:-ml-1 ltr:-mr-1" />
 @endif
 
-@if ($target)
-<div wire:loading wire:target="{{ $target }}">
+@if ($wireTarget)
+<div wire:loading wire:target="{{ $wireTarget }}">
     <svg xmlns="http://www.w3.org/2000/svg"
         class="icon icon-tabler icon-tabler-loader animate-spin h-5 w-5" viewBox="0 0 24 24"
         stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -75,7 +75,7 @@
         <line x1="7.75" y1="7.75" x2="5.6" y2="5.6" />
     </svg>
 </div>
-@enderror
+@endif
 
 
 </{{$tag}}>

@@ -3,9 +3,9 @@
     'end' => null,
     'container' => 'container ',
 ])
-<div {{ $attributes->class('bg-white py-2 px-2 lg:px-0 border-b border-gray-200') }}>
+<div {{ $attributes->class('bg-white py-2 px-2 xl:px-0') }}>
     <div class="{{$container}} mx-auto flex items-center justify-between">
-        <div class="flex items-center gap-4">
+        <div class="flex items-center">
             {{$slot}}
         </div>  
 
