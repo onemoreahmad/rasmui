@@ -1,6 +1,7 @@
 @props([
     'name' => '',
     'label' => null,
+    'labelWidth' => 'w-36',
     'info' => '',
     'hidelabel' => true,
     'block' => false,
@@ -12,14 +13,14 @@
 
 <div wire:key="{{$name}}" class="lg:flex items-center w-full gap-x-2 p-1 bg-gray-100/75 rounded-md @if ($block) flex-col items-start @endif XX[&:has(+[*])]:mb-2 XX[*+&]:mt-2">
     @if ($label)
-        <label for="{{$name}}" class="inline-block text-sm text-gray-500 p-2 flex-shrink-0 @if ($block) w-full @else w-36 @endif font-semibold">
+        <label for="{{$name}}" class="inline-block text-sm text-gray-500 p-2 flex-shrink-0 @if ($block) w-full @else {{ $labelWidth }} @endif font-semibold">
             {{ $label }} </label>
     @endif
     <div {{ $attributes->merge(['class' => 'relative '. $width]) }} dir="{{ $dir }}">
         <div class="flex items-center w-full text-gray-500">
 
             @if ($prefix)
-                <div class="px-2 text-sm text-gray-500 shrink-0">
+                <div class="px-2 text-xs opacity-70 shrink-0">
                     {{ $prefix }}
                 </div>
             @endif
@@ -29,7 +30,7 @@
             </div>
 
             @if ($suffix)
-                <div class="px-2 text-sm shrink-0">
+                <div class="px-2 text-xs opacity-70 shrink-0">
                     {{ $suffix }}
                 </div>
             @endif
