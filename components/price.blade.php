@@ -3,7 +3,7 @@
     'value' => null,
     'name' => null,
     'type' => 'text',
-    'inputWidth' => 'w-full',
+    'inputWidth' => 'w-auto',
     'disabled' => (bool)false,
     'label' => null,
     'focus' => false,
@@ -18,7 +18,7 @@
 
 @php $iconTrailing = $attributes->get('icon:trailing'); @endphp
 
-<rasm:field name="{{ $name }}" :info="$description" :label="__($label)" :prefix="$prefix" :suffix="$suffix" :dir="$dir">
+<rasm:field name="{{ $name }}" :info="$description" :label="__($label)" :prefix="$prefix" :suffix="$suffix" :dir="$dir" :width="$width">
 
     <div class="relative w-full" 
         x-data="{

@@ -7,14 +7,15 @@
     'prefix' => null,
     'suffix' => null,
     'dir' => null,
+    'width' => '',
 ])
 
-<div wire:key="{{$name}}" class="lg:flex items-center w-fullx gap-x-2 p-1 bg-gray-100/75 rounded-md @if ($block) flex-col items-start @endif XX[&:has(+[*])]:mb-2 XX[*+&]:mt-2">
+<div wire:key="{{$name}}" class="lg:flex items-center w-full gap-x-2 p-1 bg-gray-100/75 rounded-md @if ($block) flex-col items-start @endif XX[&:has(+[*])]:mb-2 XX[*+&]:mt-2">
     @if ($label)
         <label for="{{$name}}" class="inline-block text-sm text-gray-500 p-2 flex-shrink-0 @if ($block) w-full @else w-36 @endif font-semibold">
             {{ $label }} </label>
     @endif
-    <div {{ $attributes->merge(['class' => 'relative w-full ']) }} dir="{{ $dir }}">
+    <div {{ $attributes->merge(['class' => 'relative '. $width]) }} dir="{{ $dir }}">
         <div class="flex items-center w-full text-gray-500">
 
             @if ($prefix)
