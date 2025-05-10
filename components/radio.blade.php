@@ -10,7 +10,7 @@
     'options' => [],
 ])
 
-<rasm:field wire:key="{{ $name }}" name="{{ $name }}" info="{{ $info }}" label="{{ __($label) }}">
+<rasm:field wire:key="{{ $name }}" name="{{ $name }}" info="{{ $info }}" label="{{ __($label) }}" :width="$width" :labelWidth="$labelWidth">
  
     <div class="flex items-center gap-1 text-sm w-full @if ($block) flex-col @endif">
  
@@ -19,8 +19,7 @@
             @foreach ($options as $item)
                 <label for="radio{{ $name }}-{{ $item }}"
                 class="p-2 px-3 bg-white hover:bg-primary-100 rounded cursor-pointer flex items-center gap-x-2 @if ($block) w-full @endif capitalize">
-          
-
+           
                 <input type="radio"
                     @if ($live) wire:model.live="{{ $name }}" @else wire:model="{{ $name }}" @endif
                     value="{{ $item }}" id="radio{{ $name }}-{{ $item }}"
