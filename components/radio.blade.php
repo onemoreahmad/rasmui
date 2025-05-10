@@ -8,6 +8,8 @@
     'info' => '',
     'placeholder' => '',
     'options' => [],
+    'width' => '',
+    'labelWidth' => 'w-36',
 ])
 
 <rasm:field wire:key="{{ $name }}" name="{{ $name }}" info="{{ $info }}" label="{{ __($label) }}" :width="$width" :labelWidth="$labelWidth">
