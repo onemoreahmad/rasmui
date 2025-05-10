@@ -7,9 +7,10 @@
     'placeholder' => '',
     'options' => [],
     'live' => false,
+    'width' => '',
 ])
 
-<rasm:field name="{{ $name }}" info="{{ $info }}" label="{{ __($label) }}">
+<rasm:field name="{{ $name }}" info="{{ $info }}" label="{{ __($label) }}" :width="$width" >
     <select @if($live) wire:model.live="{{ $name }}" @else wire:model="{{ $name }}"@endif id="{{ $name }}"
         {{$attributes->class('py-2 bg-white border  p-2 px-3 text-sm  flex-shrink-0 rounded-md shadow-smX focus:outline-none border-transparent focus:border-primary-400 placeholder-gray-400 text-gray-700   ') }}>
         @if ($options == array_values($options))
