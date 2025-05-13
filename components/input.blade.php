@@ -11,7 +11,7 @@
     'dir' => null,
     'icon' => null,
     'description' => '',
-    'width' => '',
+    'width' => 'w-full',
     'placeholder' => '',
     'prefix' => null,
     'suffix' => null,
