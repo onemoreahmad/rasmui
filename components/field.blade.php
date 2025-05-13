@@ -9,6 +9,7 @@
     'suffix' => null,
     'dir' => null,
     'width' => '',
+    'errormsg' => true,
 ])
 
 <div wire:key="{{$name}}" class="lg:flex items-center w-full gap-x-2 p-1 bg-gray-100/75 rounded-md @if ($block) flex-col items-start @endif XX[&:has(+[*])]:mb-2 XX[*+&]:mt-2">
@@ -45,8 +46,10 @@
             @endif
         </div>
  
-        @error($name)
-            <small class="text-red-600 mt-1 text-xs">{{ $message }}</small>
-        @enderror
+        @if ($errormsg)
+            @error($name)
+                <small class="text-red-600 mt-1 text-xs">{{ $message }}</small>
+            @enderror
+        @endif
     </div>
 </div>
