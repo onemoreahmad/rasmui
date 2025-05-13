@@ -8,7 +8,7 @@
     'prefix' => null,
     'suffix' => null,
     'dir' => null,
-    'width' => '',
+    'width' => 'w-full',
     'errormsg' => true,
 ])
 
