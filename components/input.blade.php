@@ -11,6 +11,7 @@
     'dir' => null,
     'icon' => null,
     'description' => '',
+    'info' => '',
     'width' => 'w-full',
     'placeholder' => '',
     'prefix' => null,
@@ -20,7 +21,7 @@
 
 @php $iconTrailing = $attributes->get('icon:trailing'); @endphp
 
-<rasm:field name="{{ $name }}" :info="$description" :label="__($label)" :prefix="$prefix" :suffix="$suffix" :dir="$dir" :width="$width" :labelWidth="$labelWidth" :errormsg="$errormsg">
+<rasm:field name="{{ $name }}" :info="$info" :label="__($label)" :prefix="$prefix" :suffix="$suffix" :dir="$dir" :width="$width" :labelWidth="$labelWidth" :errormsg="$errormsg">
 
     <div class="relative w-full">
 
